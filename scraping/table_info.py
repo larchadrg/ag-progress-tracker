@@ -63,4 +63,7 @@ if __name__ == "__main__":
     factions = get_factions(table_rows)	
 
     for i in range(len(names)):
-        print(names[i], ranks[i], factions[i])
+        print("name: ", names[i])
+        print("rank: ", ranks[i])
+        print("faction:",factions[i])
+        print()

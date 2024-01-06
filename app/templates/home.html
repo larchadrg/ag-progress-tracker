@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
+
+</head>
+<body>
+    <h1>Aethers Gaze Character List</h1>
+    
+    <div class="characters">
+        {% for character in character_list%}
+            <div class="character">
+                <img src="/static/images/modifiers/{{character.image}}" alt="{{character.name}}">
+                <section class="info">
+                    <h2>{{character.name}}</h2>
+                    <p class = "model">{{character.model}}</p>
+                    <p>Rank: {{character.rank}}</p>
+                    <p>Faction: {{character.genzone}}</p>
+                    <p>Element: {{character.element}}</p>
+                </section>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,354 @@
+[
+  {
+    "name": "Verthandi",
+    "model": "New Pact",
+    "rank": "B",
+    "genzone": "Yggdrasill",
+    "element": "Physical",
+    "image": "Modifier-New_Pact-Icon.png"
+  },
+  {
+    "name": "Zenkibo Tengu",
+    "model": "Surefire",
+    "rank": "B",
+    "genzone": "Shinou",
+    "element": "Physical",
+    "image": "Modifier-New_Pact-Icon.png"
+  },
+  {
+    "name": "Poseidon",
+    "model": "Tidal Song",
+    "rank": "B",
+    "genzone": "Olympus",
+    "element": "Water",
+    "image": "Modifier-New_Pact-Icon.png"
+  },
+  {
+    "name": "Osiris",
+    "model": "The Innocence",
+    "rank": "A",
+    "genzone": "Nile",
+    "element": "Physical",
+    "image": "Modifier-New_Pact-Icon.png"
+  },
+  {
+    "name": "Hodur",
+    "model": "Dark Mistletoe",
+    "rank": "A",
+    "genzone": "Yggdrasill",
+    "element": "Shadow",
+    "image": "Modifier-Dark_Mistletoe-Icon.png"
+  },
+  {
+    "name": "Leviathan",
+    "model": "Drifting Flurry",
+    "rank": "A",
+    "genzone": "Asterism",
+    "element": "Ice",
+    "image": "Modifier-Darkstar-Icon.png"
+  },
+  {
+    "name": "Nuadha",
+    "model": "Airgetlam",
+    "rank": "A",
+    "genzone": "Asterism",
+    "element": "Fire",
+    "image": "Modifier-Airgetlam-Icon.png"
+  },
+  {
+    "name": "Sobek",
+    "model": "Croc Rage",
+    "rank": "A",
+    "genzone": "Nile",
+    "element": "Water",
+    "image": "Modifier-Darkstar-Icon.png"
+  },
+  {
+    "name": "Shu",
+    "model": "Gusty Lance",
+    "rank": "A",
+    "genzone": "Nile",
+    "element": "Wind",
+    "image": "Modifier-New_Pact-Icon.png"
+  },
+  {
+    "name": "Tsukuyomi",
+    "model": "Sakubo",
+    "rank": "A",
+    "genzone": "Shinou",
+    "element": "Shadow",
+    "image": "Modifier-Darkstar-Icon.png"
+  },
+  {
+    "name": "Vidar",
+    "model": "Frost Fang",
+    "rank": "A",
+    "genzone": "Yggdrasill",
+    "element": "Ice",
+    "image": "Modifier-Frost_Fang-Icon.png"
+  },
+  {
+    "name": "Hera",
+    "model": "Radiant Feather",
+    "rank": "A",
+    "genzone": "Olympus",
+    "element": "Fire",
+    "image": "Modifier-Radiant_Feather-Icon.png"
+  },
+  {
+    "name": "Buzenbo Tengu",
+    "model": "Shinku",
+    "rank": "A",
+    "genzone": "Shinou",
+    "element": "Physical",
+    "image": "Modifier-Darkstar-Icon.png"
+  },
+  {
+    "name": "Apollo",
+    "model": "The Glare",
+    "rank": "A",
+    "genzone": "Olympus",
+    "element": "Light",
+    "image": "Modifier-The_Glare-Icon.png"
+  },
+  {
+    "name": "Verthandi",
+    "model": "Archaic Oath",
+    "rank": "A",
+    "genzone": "Yggdrasill",
+    "element": "Lightning",
+    "image": "Modifier-Archaic_Oath-Icon.png"
+  },
+  {
+    "name": "Zenkibo Tengu",
+    "model": "Comet R4Y",
+    "rank": "A",
+    "genzone": "Shinou",
+    "element": "Light",
+    "image": "Modifier-Comet_R4Y-Icon.png"
+  },
+  {
+    "name": "Hermes",
+    "model": "Windwalker",
+    "rank": "A",
+    "genzone": "Olympus",
+    "element": "Wind",
+    "image": "Modifier-Windwalker-Icon.png"
+  },
+  {
+    "name": "Kali",
+    "model": "Thundertusk",
+    "rank": "A",
+    "genzone": "Asterism",
+    "element": "Lightning",
+    "image": "Modifier-Thundertusk-Icon.png"
+  },
+  {
+    "name": "Oneiroi",
+    "model": "Drowsie",
+    "rank": "A",
+    "genzone": "Olympus",
+    "element": "Light",
+    "image": "Modifier-Drowsie-Icon.png"
+  },
+  {
+    "name": "Heimdall",
+    "model": "Enlightening",
+    "rank": "A",
+    "genzone": "Yggdrasill",
+    "element": "Light",
+    "image": "Modifier-Enlightening-Icon.png"
+  },
+  {
+    "name": "Enlil",
+    "model": "Cleansing Wind",
+    "rank": "A",
+    "genzone": "Asterism",
+    "element": "Wind",
+    "image": "Modifier-Cleansing_Wind-Icon.png"
+  },
+  {
+    "name": "Kingu",
+    "model": "Wasteland Fiend",
+    "rank": "A",
+    "genzone": "Asterism",
+    "element": "Physical",
+    "image": "Modifier-Wasteland_Fiend-Icon.png"
+  },
+  {
+    "name": "Bastet",
+    "model": "Ailuros",
+    "rank": "A",
+    "genzone": "Nile",
+    "element": "Shadow",
+    "image": "Modifier-Ailuros-Icon.png"
+  },
+  {
+    "name": "Asura",
+    "model": "Rāhu",
+    "rank": "S",
+    "genzone": "Asterism",
+    "element": "Fire",
+    "image": "Modifier-Rāhu-Icon.png"
+  },
+  {
+    "name": "Poseidon",
+    "model": "Arctic Abyss",
+    "rank": "S",
+    "genzone": "Olympus",
+    "element": "Ice",
+    "image": "Modifier-Arctic_Abyss-Icon.png"
+  },
+  {
+    "name": "Tyr",
+    "model": "AblaZe",
+    "rank": "S",
+    "genzone": "Yggdrasill",
+    "element": "Light",
+    "image": "Modifier-AblaZe-Icon.png"
+  },
+  {
+    "name": "Kagutsuchi",
+    "model": "Ryugiri",
+    "rank": "S",
+    "genzone": "Shinou",
+    "element": "Fire",
+    "image": "Modifier-Darkstar-Icon.png"
+  },
+  {
+    "name": "Kuninotokotachi",
+    "model": "Jin-ei",
+    "rank": "S",
+    "genzone": "Shinou",
+    "element": "Physical",
+    "image": "Modifier-Jin-ei-Icon.png"
+  },
+  {
+    "name": "Ookuninushi",
+    "model": "Early Sakura",
+    "rank": "S",
+    "genzone": "Shinou",
+    "element": "Physical",
+    "image": "Modifier-Darkstar-Icon.png"
+  },
+  {
+    "name": "Tsukuyomi",
+    "model": "Shinri",
+    "rank": "S",
+    "genzone": "Shinou",
+    "element": "Thunder",
+    "image": "Modifier-Darkstar-Icon.png"
+  },
+  {
+    "name": "Osiris",
+    "model": "Living Soul",
+    "rank": "S",
+    "genzone": "Nile",
+    "element": "Wind",
+    "image": "Modifier-Living_Soul-Icon.png"
+  },
+  {
+    "name": "Hel",
+    "model": "Darkstar",
+    "rank": "S",
+    "genzone": "Yggdrasill",
+    "element": "Shadow",
+    "image": "Modifier-Darkstar-Icon.png"
+  },
+  {
+    "name": "Hera",
+    "model": "Phantasmal Dawn",
+    "rank": "S",
+    "genzone": "Olympus",
+    "element": "Light",
+    "image": "Modifier-Phantasmal_Dawn-Icon.png"
+  },
+  {
+    "name": "Skadi",
+    "model": "Waverender",
+    "rank": "S",
+    "genzone": "Yggdrasill",
+    "element": "Ice",
+    "image": "Modifier-Waverender-Icon.png"
+  },
+  {
+    "name": "Leviathan",
+    "model": "Countertide",
+    "rank": "S",
+    "genzone": "Asterism",
+    "element": "Water",
+    "image": "Modifier-Countertide-Icon.png"
+  },
+  {
+    "name": "Hades",
+    "model": "Puppet Master",
+    "rank": "S",
+    "genzone": "Olympus",
+    "element": "Shadow",
+    "image": "Modifier-Puppet_Master-Icon.png"
+  },
+  {
+    "name": "Shu",
+    "model": "Flowfly Mist",
+    "rank": "S",
+    "genzone": "Nile",
+    "element": "Lightning",
+    "image": "Modifier-Flowfly_Mist-Icon.png"
+  },
+  {
+    "name": "Athena",
+    "model": "Chord of Convallaria",
+    "rank": "S",
+    "genzone": "Olympus",
+    "element": "Physical",
+    "image": "Modifier-Chord_of_Convallaria-Icon.png"
+  },
+  {
+    "name": "Oceanus",
+    "model": "Backflowing",
+    "rank": "S",
+    "genzone": "Olympus",
+    "element": "Water",
+    "image": "Modifier-Backflowing-Icon.png"
+  },
+  {
+    "name": "Marduk",
+    "model": "Rage Serpent",
+    "rank": "S",
+    "genzone": "Asterism",
+    "element": "Physical",
+    "image": "Modifier-Rage_Serpent-Icon.png"
+  },
+  {
+    "name": "Anubis",
+    "model": "Jackal",
+    "rank": "S",
+    "genzone": "Nile",
+    "element": "Shadow",
+    "image": "Modifier-Jackal-Icon.png"
+  },
+  {
+    "name": "Thor",
+    "model": "Roaring Thunder",
+    "rank": "S",
+    "genzone": "Yggdrasill",
+    "element": "Lightning",
+    "image": "Modifier-Roaring_Thunder-Icon.png"
+  },
+  {
+    "name": "Lingguang",
+    "model": "Untainted Heart",
+    "rank": "S",
+    "genzone": "Tianyuan",
+    "element": "Fire",
+    "image": "Modifier-Untainted_Heart-Icon.png"
+  },
+  {
+    "name": "Jinwu",
+    "model": "Tenblaze",
+    "rank": "S",
+    "genzone": "Tianyuan",
+    "element": "Fire",
+    "image": "Modifier-Tenblaze-Icon.png"
+  }
+]
