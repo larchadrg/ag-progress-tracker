@@ -33,3 +33,8 @@
   .hide {
     display: none;
   }
+
+.card > img {
+  width: 140px;
+  height: 240px;
+}
