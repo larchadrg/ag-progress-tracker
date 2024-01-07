@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
-
+    <script src="{{url_for('static', filename='scripts/home.js')}}" defer></script>
 </head>
 <body>
     <h1>Aethers Gaze Character List</h1>
-    
-    <div class="characters">
-        {% for character in character_list%}
-            <div class="character">
-                <img src="/static/images/modifiers/{{character.image}}" alt="{{character.name}}">
-                <section class="info">
-                    <h2>{{character.name}}</h2>
-                    <p class = "model">{{character.model}}</p>
-                    <p>Rank: {{character.rank}}</p>
-                    <p>Faction: {{character.genzone}}</p>
-                    <p>Element: {{character.element}}</p>
-                </section>
-            </div>
-        {% endfor %}
-    </div>
+    <div class="search-wrapper">
+        <label for="search">Search Users</label>
+        <input type="search" id="search" data-search>
+      </div>
+      
+      <div class="user-cards" data-user-cards-container></div>
+
+      <template data-user-template>
+        <div class="card">
+          <img class="character image" src = "/static/images/modifiers/" data-image/>
+          <div class="character name" data-header></div>
+          <div class="character info" data-body>
+            <div class="character model" data-model></div>
+            <div class="character rank" data-rank></div>
+            <div class="character faction" data-faction></div>
+            <div class="character element" data-element></div>
+          </div>
+        </div>
+      </template>
 </body>
 </html>
