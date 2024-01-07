@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Aether Gazer Progress-Tracker</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
     <script src="{{url_for('static', filename='scripts/home.js')}}" defer></script>
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 </head>
 <body>
-    <h1>Aethers Gaze Character List</h1>
+    <h1>Aether Gazer Character List</h1>
     <div class="search-wrapper">
-        <label for="search">Search Users</label>
+        <label for="search">Search Character</label>
         <input type="search" id="search" data-search>
       </div>
       
@@ -18,13 +19,16 @@
 
       <template data-user-template>
         <div class="card">
-          <img class="character image" src = "/static/images/modifiers/" data-image/>
-          <div class="character name" data-header></div>
+          <div>
+            <img class="character image" src = "/static/images/modifiers/" data-image/>
+            <div class="character name" data-header></div>
+            <div class="character model" data-model></div>
+          </div>
           <div class="character info" data-body>
             <div class="character model" data-model></div>
-            <div class="character rank" data-rank></div>
-            <div class="character faction" data-faction></div>
-            <div class="character element" data-element></div>
+            <div class="character rank" data-rank>Rank: </div>
+            <div class="character faction" data-faction>Faction: </div>
+            <div class="character element" data-element>Element: </div>
           </div>
         </div>
       </template>

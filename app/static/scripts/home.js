@@ -28,9 +28,9 @@ fetch("api/characters-info")
       header.textContent = character.name
       image.src = image.src + character.image
       model.textContent = character.model
-      rank.textContent = character.rank
-      element.textContent = character.element
-      faction.textContent = character.faction
+      rank.textContent = rank.textContent + character.rank
+      element.textContent = element.textContent + character.element
+      faction.textContent = faction.textContent + character.genzone
       userCardContainer.append(card)
       return {
         name: character.name,
