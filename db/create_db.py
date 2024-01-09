@@ -1,7 +1,8 @@
 import sqlite3
 
-def create_database(): 
-    connection = sqlite3.connect('database.db')
+def create_database():
+    db_path = r"C:\Users\larac\Documents\ag-progress-tracker\app\instance\database.db" 
+    connection = sqlite3.connect(db_path)
 
     c = connection.cursor()
 
@@ -13,6 +14,12 @@ def create_database():
                 genzone TEXT,
                 element TEXT,
                 image TEXT
+                )""") 
+    
+    c.execute("""CREATE TABLE IF NOT EXISTS sigils (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL,
+                image TEXT NOT NULL
                 )""") 
 
     connection.commit()
