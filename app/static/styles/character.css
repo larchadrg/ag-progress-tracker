@@ -1,0 +1,119 @@
+a {
+    display: block;
+    width: 100px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    margin: 2px;
+}
+
+a:hover {
+    background: #2f7797;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sigils.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sigil.container{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 150px;
+    border: 1px solid black;
+    padding: 5px;
+    background-color:rgb(168, 207, 252);
+}
+
+input {
+    max-width: 150px;
+}
+
+
+.sigil.img {
+    width: 50px;
+    height: 50px;
+}
+
+.warp.level {
+    width: 30px;
+    display: flex;
+}
+
+.label {
+    display: flex;
+    padding: 2px;
+}
+
+.level.selector {
+    width: 30px;
+}
+
+#main_wrapper {
+    display: grid;
+    gap: 1rem; 
+    grid-template-areas: 
+    "back sigils sigils sigils"
+    "char sigils sigils sigils"
+    "char percent weapon skills";
+    grid-template-rows: 100px 400px;
+    grid-template-rows: auto 1fr;
+    padding: 10px;
+}
+
+.back.wrapper{
+    grid-area: back;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+}
+
+
+
+.sigils.wrapper{
+    grid-area: sigils;
+}
+
+.character.wrapper{
+    background-color:rgb(208, 214, 223);
+    grid-area: char;
+    padding: 5px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 200px;
+}
+
+.weapon.wrapper{
+    grid-area: weapon;
+}
+
+.skills.wrapper{
+    grid-area: skills;
+}
+
+#percentWrapper{
+    grid-area: percent;
+}
+
+#reset{
+    background-color: rgb(204, 5, 5);
+}
+
+#reset:hover{
+    background-color: rgb(141, 3, 3);
+}

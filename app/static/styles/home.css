@@ -1,8 +1,3 @@
-body { 
-  padding: 3%;
-  background-color: #EBF5FB;
-}
-
 h1 {
   font-size: 3rem;
   font-family: Arial, Helvetica, sans-serif;
@@ -10,13 +5,17 @@ h1 {
 
 label {
   font-size: 1.5rem;
+}
 
+select {
+  max-width: 100px;
 }
 
 .search-wrapper {
     display: flex;
     flex-direction: column;
     gap: .25rem;
+    margin: 2%;
   }
   
   input {
@@ -25,30 +24,30 @@ label {
   
   .user-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
     gap: .25rem;
-    margin-top: 1rem;
+    margin: 2%;
   }
   
   .card {
     border: 1px solid black;
-    background-color: white;
-    padding: .5rem;
+    background-color: rgb(196, 212, 255);
     text-align: center;
     display: flex;
     justify-content: space-evenly;
     margin: 5px;
-
-  }
+    align-items: center;
+    text-wrap: wrap;
+    }
   .name {
     margin-bottom: .25rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: bolder;
   }
 
    .model {
     font-style: italic;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   
@@ -57,15 +56,15 @@ label {
   }
 
 .character.image {
-  width: 140px;
-  height: 240px;
+  width: 100px;
+  height: 200px;
 }
 
 .character.info{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: left;
-
+  padding-left: 5px;
 }

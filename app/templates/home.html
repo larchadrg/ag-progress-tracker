@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aether Gazer Progress-Tracker</title>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
-    <script src="{{url_for('static', filename='scripts/home.js')}}" defer></script>
-    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block javascript %} <script src="{{url_for('static', filename='scripts/home.js')}}" defer></script> {% endblock %}
+{% block css %} <link rel="stylesheet" href="{{url_for('static', filename='styles/home.css')}}"> {% endblock %}
+{% block body %}
+  <header>
     <h1>Aether Gazer Character List</h1>
+  </header>
     <div class="search-wrapper">
         <label for="search">Search Character</label>
         <input type="search" id="search" data-search>
@@ -19,18 +15,25 @@
 
       <template data-user-template>
         <div class="card">
+          <div class=" character id" data-id></div>
           <div>
             <img class="character image" src = "/static/images/modifiers/" data-image/>
-            <div class="character name" data-header></div>
-            <div class="character model" data-model></div>
           </div>
           <div class="character info" data-body>
+            <div class="character name" data-header></div>
+            <div class="character model" data-model></div>
             <div class="character model" data-model></div>
             <div class="character rank" data-rank>Rank: </div>
             <div class="character faction" data-faction>Faction: </div>
             <div class="character element" data-element>Element: </div>
+            <select class="select progress" id="select-progress-" onchange="changeBgCard(this, 'custom-card');" data-select>
+              <option value="not_started">Not Started</option>
+              <option value="finished">Finished</option>
+              <option value="in_progress">In Progress</option>
+            </select>
+            <a class="button" href="/character/" id="check-" data-check>Modify</a>
+            <p class = "character progress" data-progress>Progress: </p>
           </div>
         </div>
       </template>
-</body>
-</html>
+{% endblock %}

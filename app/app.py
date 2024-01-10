@@ -20,16 +20,37 @@ class Character(db.Model):
     element:str = db.Column(db.String)
     image:str = db.Column(db.String)
 
+@dataclass
+class Sigil(db.Model):
+    __tablename__ = 'sigils'
+    id:int = db.Column(db.Integer, primary_key=True)
+    name:str = db.Column(db.String)
+    image:str = db.Column(db.String)
 
 @app.route("/")
 def home(): 
-    character_list = db.session.query(Character).all()
-    return render_template("home.html", character_list=character_list)
+    return render_template("home.html")
 
 @app.get("/api/characters-info") 
-def characters_info(): 
+def list_characters(): 
     character_list = db.session.query(Character).all()
     return jsonify(character_list)
+
+@app.route("/character/<int:id>")
+def character_info(id):
+    character = db.session.query(Character).filter(Character.id == id).first()
+    sigils = db.session.query(Sigil).all()
+    return render_template("character.html", character=character, sigils = sigils)
+
+@app.get("/api/sigils")
+def list_sigils(): 
+    sigil_list = db.session.query(Sigil).all()
+    return jsonify(sigil_list)
+
+@app.get("/api/sigil/<int:id>/image")
+def sigil_image(id): 
+    sigil = db.session.query(Sigil).filter(Sigil.id == id).first()
+    return render_template("image.html", image = sigil.image)
 
 if __name__ == "__main__":
     # Start the Flask application

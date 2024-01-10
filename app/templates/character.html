@@ -1,0 +1,136 @@
+{% extends "base.html "%}
+{% block title %} {{character.model}} {% endblock %}
+{% block javascript %} <script src="{{url_for('static', filename='scripts/character.js')}}" defer></script> {% endblock %}
+{% block css %} <link rel="stylesheet" href="{{url_for('static', filename='styles/character.css')}}"> {% endblock %}
+
+{% block body %}
+<div id = "main_wrapper" class = "parent wrapper">
+    <section class = "back wrapper">
+        <a href = "/">Back</a>
+        <a href = "/" id = "reset">Reset</a>
+    </section>
+    <section class = "character wrapper">
+        <h2>{{character.name}}: {{character.model}}</h2>
+        <img class = "character img" src="{{url_for('static', filename='images/modifiers/' + character.image)}}">
+        <div class = "character info">
+            <div class = "character rank">Rank: {{character.rank}}</div>
+            <div class = "character faction">Faction: {{character.genzone}}</div>
+            <div class = "character element">Element: {{character.element}}</div>
+            <div class = "level "> Level: 
+                <input class = "character level selector" type="number" value="1" />
+            </div>
+            <div class = "character personal_rank"> Personal Rank: 
+                <select class = "character personal_rank selector" value="{{character.rank}}">
+                    <option value="none">None</option>
+                    <option value="omega">Ω</option>
+                    <option value="SSS">SSS</option>
+                    <option value="SS">SS</option>
+                    <option value="S">S</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                </select>
+            </div>
+        </div>
+    </section>
+    <section class = "sigils wrapper">
+        <div class = "sigils container">
+            {% for sigil_number in range(6) %}
+                <div class = "sigil container" id = "sigil{{sigil_number}}">
+                    <h3>Sigil {{sigil_number+1}}</h3>
+                    <img class = "sigil img" id="sigil_image_{{sigil_number}}" src="{{url_for('static', filename='images/sigils/' + 'sigil_blank.png')}}">
+                    <input list="brow" onchange="myFunction(this, '{{sigil_number}}')">
+                    <datalist id="brow">
+                        <option value="None">
+                        {% for i in range(sigils | length)%}
+                        <option value="{{sigils[i].name}}">
+                        {% endfor %}
+                    </datalist>  
+                    <div class = "sigil{{sigil_number}} level label">Level: 
+                        <input class = "sigil level selector" id="sigil_level_{{sigil_number}}" type="number" value="0" />
+                    </div>
+                    <section class = "warp container" id = "warp{{sigil_number}}">
+                        {%for i in [1,2] %}
+                            <label> Warp {{i}}:
+                                <input list="brow" onchange="changeWarp`{{i}}`(this, '{{sigil_number}}')">
+                                <datalist id="brow warp1">
+                                    <option value="None">
+                                    {% for i in range(sigils | length)%}
+                                    <option value="{{sigils[i].name}}">
+                                    {% endfor %}
+                                </datalist> 
+                            </label>
+                        
+                            <div class = "warp{{i}} level label">Level: 
+                                <input class = "warp level selector" id="sigil_level_{{i}}" type="number" value="0" />
+                            </div>
+                        {% endfor %}
+                        
+                    </section>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class = "weapon wrapper">
+        <h3>Weapon</h3>
+        <div class = "weapon container">
+            <div class = "weapon level label"> Weapon Level: 
+                <input class = "weapon level selector" id="weapon_level" type="number" value="0" />
+            </div> 
+        </div>
+    </section>
+    <section class = "skills container">
+        <h3>Skills</h3>
+        <div class = "skill level" id = "skill1"> Normal Attack level: 
+            <input class = "skill level selector" id="skill_level_1" type="number" value="0" />
+        </div>
+        <div class = "skill level " id = "skill1"> Skill 1 level: 
+            <input class = "skill level selector" id="skill_level_1" type="number" value="0" />
+        </div>
+        <div class = "skill level " id = "skill1"> Skill 2 level: 
+            <input class = "skill level selector" id="skill_level_1" type="number" value="0" />
+        </div>
+        <div class = "skill level " id = "skill1"> Skill 3 level: 
+            <input class = "skill level selector" id="skill_level_1" type="number" value="0" />
+        </div>
+        <div class = "skill level " id = "skill1"> Ultimate Skill level: 
+            <input class = "skill level selector" id="skill_level_1" type="number" value="0" />
+        </div>
+        <div class = "skill level " id = "skill1"> Dodge Skill level: 
+            <input class = "skill level selector" id="skill_level_1" type="number" value="0" />
+        </div>
+    </section>
+    <section id = "percentWrapper">
+        <h3>Progress</h3>
+        <p>Completed: 0%</p>
+    </section>
+</div>
+
+
+    <script defer>
+        let sigils = undefined 
+        fetch("/api/sigils")
+        .then(res => res.json())
+        .then (data => {
+            sigils = data
+        })
+
+        function myFunction(element, sigil_number) {
+            var name_input = element.value;
+            let elem = document.getElementById("sigil_image_" + sigil_number);
+
+            if (name_input == "" || name_input == "None") {
+                elem.src= "{{url_for('static', filename='images/sigils/')}}" + "sigil_blank.png";
+                return; 
+            }
+            sigils.forEach(option => {
+                if (option.name == name_input) {
+                    let elem = document.getElementById("sigil_image_" + sigil_number);
+                    elem.src= "{{url_for('static', filename='images/sigils/')}}" + option.image;
+                }
+            });
+        }	
+    </script>
+
+{% endblock %}
+
