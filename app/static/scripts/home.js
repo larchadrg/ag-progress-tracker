@@ -2,13 +2,39 @@ const userCardTemplate = document.querySelector("[data-user-template]")
 const userCardContainer = document.querySelector("[data-user-cards-container]")
 const searchInput = document.querySelector("[data-search]")
 
-searchInput.addEventListener("input", e => {
-  const value = e.target.value.toLowerCase()
+searchInput.addEventListener("input", filterCharacters);
+
+function filterCharacters() {
+  let inputValue = searchInput.value.toLowerCase();
+  let factions = activeRegions();
+  let elements = activeElements();
+
   characters.forEach(character => {
-    const isVisible = character.name.toLowerCase().includes(value) || character.model.toLowerCase().includes(value);
-      character.element.classList.toggle("hide", !isVisible)
+    let isVisible = true; 
+    if (inputValue.length > 0) {
+      isVisible = character.name.toLowerCase().startsWith(inputValue) || character.model.toLowerCase().startsWith(inputValue);
+    }
+    if (factions.length > 0){
+      isVisible = isVisible && factions.includes(character.faction);
+    }
+    if (elements.length > 0){
+      isVisible = isVisible && elements.includes(character.elem);
+    }
+      character.element.style.display = isVisible ? "flex" : "none"; 
   })
-})
+}
+
+function activeRegions(){
+  let cbs = Array.from(document.querySelectorAll('input[cb-filter-option-region]:checked'));
+  let regions = cbs.map(cb => cb.value);
+  return regions;
+}
+
+function activeElements(){
+  let cbs = Array.from(document.querySelectorAll('input[cb-filter-option-element]:checked'));
+  let elements = cbs.map(cb => cb.value);
+  return elements;
+}
 
 fetch("api/characters-info")
   .then(res => res.json())
@@ -38,6 +64,7 @@ fetch("api/characters-info")
       userCardContainer.append(card)
       return {
         name: character.name,
+        faction: character.genzone,
         model: character.model,
         rank: character.rank,
         elem: character.element, 

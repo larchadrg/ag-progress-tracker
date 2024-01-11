@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import select  
 from dataclasses import dataclass
 import os 
 
@@ -29,7 +30,11 @@ class Sigil(db.Model):
 
 @app.route("/")
 def home(): 
-    return render_template("home.html")
+    regions = db.session.query(Character.genzone).distinct()
+    region_list = [row[0] for row in regions]
+
+    elements = [row[0] for row in db.session.query(Character.element).distinct()]
+    return render_template("home.html", regions = region_list, elements = elements)
 
 @app.get("/api/characters-info") 
 def list_characters(): 

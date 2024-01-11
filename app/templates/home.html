@@ -6,10 +6,28 @@
   <header>
     <h1>Aether Gazer Character List</h1>
   </header>
-    <div class="search-wrapper">
+    <nav class="search-wrapper">
         <label for="search">Search Character</label>
         <input type="search" id="search" data-search>
-      </div>
+        <ul class = "filter faction">
+          <label>Faction:</label>
+          {% for i in range(regions | length) %}
+            <li class = "filter-item faction"> 
+              <label><input type="checkbox" value="{{regions[i]}}" class = "btn-faction" id="cboxFaction{{i}}" cb-filter-option-region 
+                onclick="filterCharacters();"/>{{regions[i]}}</label>
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class = "filter element">
+          <label>Element:</label>
+          {% for i in range(elements | length) %}
+            <li class = "filter-item element"> 
+              <label><input type="checkbox" value="{{elements[i]}}" class = "btn-element" id="cboxElement{{i}}" cb-filter-option-element 
+                onclick="filterCharacters();"/>{{elements[i]}}</label>
+            </li>
+          {% endfor %}
+        </ul>
+    </nav>
       
       <div class="user-cards" data-user-cards-container></div>
 
@@ -23,7 +41,7 @@
             <div class="character name" data-header></div>
             <div class="character model" data-model></div>
             <div class="character model" data-model></div>
-            <div class="character rank" data-rank>Rank: </div>
+            <div class="character rank" data-rank>Initial Rank: </div>
             <div class="character faction" data-faction>Faction: </div>
             <div class="character element" data-element>Element: </div>
             <select class="select progress" id="select-progress-" onchange="changeBgCard(this, 'custom-card');" data-select>
