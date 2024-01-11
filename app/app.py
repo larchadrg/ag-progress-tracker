@@ -33,13 +33,13 @@ def home():
 
 @app.get("/api/characters-info") 
 def list_characters(): 
-    character_list = db.session.query(Character).all()
+    character_list = db.session.query(Character).order_by(Character.name).all()
     return jsonify(character_list)
 
 @app.route("/character/<int:id>")
 def character_info(id):
     character = db.session.query(Character).filter(Character.id == id).first()
-    sigils = db.session.query(Sigil).all()
+    sigils = db.session.query(Sigil).order_by(Sigil.name).all()
     return render_template("character.html", character=character, sigils = sigils)
 
 @app.get("/api/sigils")

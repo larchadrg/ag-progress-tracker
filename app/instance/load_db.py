@@ -2,7 +2,7 @@ import sqlite3
 import csv 
 
 DB_PATH = r"C:\Users\larac\Documents\ag-progress-tracker\app\instance\database.db"
-SIGIL_CSV_PATH = r"C:\Users\larac\Documents\ag-progress-tracker\scraping\data\sigils.csv" 
+SIGIL_CSV_PATH = r"C:\Users\larac\Documents\ag-progress-tracker\scraping\data\sigils_fixed.csv" 
 
 def load_characters(): 
 
@@ -24,7 +24,7 @@ def load_sigils():
         reader = csv.reader(file)
         reader.__next__()
         for row in reader:
-            c.execute("INSERT INTO sigils (name, image) VALUES (?, ?)", row)
+            c.execute("INSERT INTO sigils (name, image) VALUES (?, ?)", row[1:])
         connection.commit()
     connection.close()
     return
