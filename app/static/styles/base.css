@@ -1,3 +1,9 @@
+:root{
+  --color-checked: #bee9e8;
+  --color-bg: #1b4965; 
+  --color-card: #62b6cb;
+}
+
 * {
   margin: 0;
     padding: 0;
@@ -8,7 +14,7 @@ label {
 }
 
 body { 
-    background-color: #284d63;
+    background-color: var(--color-bg);
   }
 
 header {
