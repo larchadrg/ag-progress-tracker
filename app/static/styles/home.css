@@ -72,6 +72,7 @@ select {
 .character.image {
   width: 80px;
   height: 160px;
+  cursor: pointer;
 }
 
 .character.info{

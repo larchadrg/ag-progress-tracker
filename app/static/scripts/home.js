@@ -3,6 +3,7 @@ const userCardContainer = document.querySelector("[data-user-cards-container]")
 const searchInput = document.querySelector("[data-search]")
 
 searchInput.addEventListener("input", filterCharacters);
+getCharactersInfo();
 
 function filterCharacters() {
   let inputValue = searchInput.value.toLowerCase();
@@ -36,7 +37,8 @@ function activeElements(){
   return elements;
 }
 
-fetch("api/characters-info")
+function getCharactersInfo(){
+  fetch("api/characters-info")
   .then(res => res.json())
   .then(data => {
     characters = data.map(character => {
@@ -64,6 +66,7 @@ fetch("api/characters-info")
       userCardContainer.append(card)
       return {
         name: character.name,
+        id: character.id,
         faction: character.genzone,
         model: character.model,
         rank: character.rank,
@@ -72,6 +75,26 @@ fetch("api/characters-info")
       }
     })
   })
+
+  .then(() => {
+    // SET LOCAL STORAGE DATA
+      characters.forEach(character => {
+      let selectId = "select-progress-" + character.id;
+      let savedValueSelect = localStorage.getItem(selectId);
+      if (savedValueSelect) {
+        document.getElementById(selectId).value = savedValueSelect;
+      }
+      changeBgCard(document.getElementById(selectId), "card-custom-color");
+    })
+  })
+}
+
+// save card background color
+function saveBgCard(element){
+  let selectedValue = element.value;
+  localStorage.setItem(element.id, selectedValue); 
+}
+
 
 function changeBgCard(element, cardClass){
   //change background color of card by its select value 
@@ -83,6 +106,10 @@ function changeBgCard(element, cardClass){
       card.style.backgroundColor = "lightgray";
       card.classList.add(cardClass); // Agregar la clase
       break;
+    case "in_progress":
+        card.style.backgroundColor = "khaki";
+        card.classList.add(cardClass); // Agregar la clase
+        break;
     case "finished":
       card.style.backgroundColor = "lightgreen";
       card.classList.remove(cardClass); // Quitar la clase
@@ -93,5 +120,6 @@ function changeBgCard(element, cardClass){
       card.classList.remove(cardClass); // Quitar la clase
       break;
   }
-
+  // save value in local storage 
+  saveBgCard(element);
 }
