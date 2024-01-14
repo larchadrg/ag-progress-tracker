@@ -5,6 +5,17 @@ const characterLevel = document.querySelector('.character.level.selector');
 const warpEffectsNames = document.querySelectorAll('.warp.effect');
 const warpEffectsLevels = document.querySelectorAll('.warp.level.selector');
 
+function removeCharacterData(){
+    localStorage.removeItem('rank'+characterId);
+    localStorage.removeItem('skillsLevels'+characterId);
+    localStorage.removeItem('sigilsLevels'+characterId);
+    localStorage.removeItem('weaponLevel'+characterId);
+    localStorage.removeItem('characterLevel'+characterId);
+    localStorage.removeItem('warpEffectsNames'+characterId);
+    localStorage.removeItem('warpEffectsLevels'+characterId);
+
+}
+
 function storeWarpEffectsLevels(){
     let warpEffectsLevelsArray = [];
     for (let i=0; i < warpEffectsLevels.length; i++){

@@ -7,7 +7,7 @@
 <div id = "main_wrapper" class = "parent wrapper">
     <section class = "back wrapper">
         <a href = "/">Back</a>
-        <a href = "/" id = "reset">Reset</a>
+        <a href = "/character/{{character.id}}" id = "reset" onclick="removeCharacterData();removeSigilData();">Reset</a>
     </section>
     <section class = "character wrapper">
         <h2>{{character.name}}: {{character.model}}</h2>
@@ -85,19 +85,19 @@
     <section class = "skills container">
         <h3>Skills</h3>
         <div class = "skill level"> Normal Attack level: 
-            <input class = "skill level selector" id="skillNA" type="number" min="1" max="45"/>
+            <input class = "skill level selector" id="skillNA" type="number" min="1" max="45" value="1"/>
         </div>
         <div class = "skill level"> Skill 1 level: 
-            <input class = "skill level selector" id="skill1" type="number" min="1" max="45" />
+            <input class = "skill level selector" id="skill1" type="number" min="1" max="45" value="1"/>
         </div>
         <div class = "skill level"> Skill 2 level: 
-            <input class = "skill level selector" id="skill2" type="number" min="1" max="45" />
+            <input class = "skill level selector" id="skill2" type="number" min="1" max="45" value="1"/>
         </div>
         <div class = "skill level"> Skill 3 level: 
-            <input class = "skill level selector" id="skill3" type="number" min="1" max="45" />
+            <input class = "skill level selector" id="skill3" type="number" min="1" max="45" value="1"/>
         </div>
         <div class = "skill level"> Ultimate Skill level: 
-            <input class = "skill level selector" id="skillU" type="number" min="1" max="45" />
+            <input class = "skill level selector" id="skillU" type="number" min="1" max="45" value="1"/>
         </div>
         <div class = "skill level"> Dodge Skill level: 1 (current max)</div>
     </section>
@@ -157,6 +157,10 @@
                 storeSigilNames();
             });
         });
+
+        function removeSigilData(){
+            localStorage.removeItem('sigilNames'+`{{character.id}}`);
+        }
     </script>
 
 {% endblock %}
