@@ -28,6 +28,15 @@ class Sigil(db.Model):
     name:str = db.Column(db.String)
     image:str = db.Column(db.String)
 
+@dataclass
+class WarpSkill(db.Model):
+    __tablename__ = 'warp_skills'
+    id:int = db.Column(db.Integer, primary_key=True)
+    name:str = db.Column(db.String)
+    image:str = db.Column(db.String)
+    slot1:int = db.Column(db.Integer)
+    slot2:int = db.Column(db.Integer)
+
 @app.route("/")
 def home(): 
     regions = db.session.query(Character.genzone).distinct()
@@ -45,12 +54,20 @@ def list_characters():
 def character_info(id):
     character = db.session.query(Character).filter(Character.id == id).first()
     sigils = db.session.query(Sigil).order_by(Sigil.name).all()
-    return render_template("character.html", character=character, sigils = sigils)
+    warp_skills = db.session.query(WarpSkill).order_by(WarpSkill.name).all()
+
+    return render_template("character.html", character=character, sigils = sigils,
+                            warp_skills = warp_skills)
 
 @app.get("/api/sigils")
 def list_sigils(): 
     sigil_list = db.session.query(Sigil).all()
     return jsonify(sigil_list)
+
+@app.get("/api/warp-skills")
+def list_warp_skills(): 
+    warp_skills = db.session.query(WarpSkill).all()
+    return jsonify(warp_skills)
 
 @app.get("/api/sigil/<int:id>/image")
 def sigil_image(id): 

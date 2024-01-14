@@ -1,5 +1,6 @@
 import sqlite3
 import csv 
+from warp_effects import data_to_insert
 
 DB_PATH = r"C:\Users\larac\Documents\ag-progress-tracker\app\instance\database.db"
 SIGIL_CSV_PATH = r"C:\Users\larac\Documents\ag-progress-tracker\scraping\data\sigils_fixed.csv" 
@@ -29,4 +30,12 @@ def load_sigils():
     connection.close()
     return
 
-load_sigils()
+def load_warp_effects():
+    connection = sqlite3.connect(DB_PATH)
+    cursor = connection.cursor()
+    cursor.executemany('INSERT INTO warp_skills (name, image, slot1, slot2) VALUES (?, ?, ?, ?)', data_to_insert)
+    connection.commit()
+    connection.close()
+    return
+
+load_warp_effects()
