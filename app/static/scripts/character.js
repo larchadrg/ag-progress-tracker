@@ -1,6 +1,73 @@
 const currentRankSelector = document.querySelector('.character.personal_rank.selector');
 const characterId = document.querySelector('.characterId').textContent;
 const weaponLevel = document.querySelector('.weapon.level.selector');
+const characterLevel = document.querySelector('.character.level.selector');
+const warpEffectsNames = document.querySelectorAll('.warp.effect');
+const warpEffectsLevels = document.querySelectorAll('.warp.level.selector');
+
+function storeWarpEffectsLevels(){
+    let warpEffectsLevelsArray = [];
+    for (let i=0; i < warpEffectsLevels.length; i++){
+        warpEffectsLevelsArray.push(warpEffectsLevels[i].value);
+    }
+    localStorage.setItem('warpEffectsLevels'+characterId, JSON.stringify(warpEffectsLevelsArray));
+}
+
+function loadWarpEffectsLevels(){
+    const savedWarpEffectsLevels = JSON.parse(localStorage.getItem('warpEffectsLevels'+characterId));
+    if (savedWarpEffectsLevels){
+        for (let i=0; i < warpEffectsLevels.length; i++){
+            warpEffectsLevels[i].value = savedWarpEffectsLevels[i];
+        }
+    }
+}
+
+warpEffectsLevels.forEach((elem) => {
+    elem.addEventListener('input', () => {
+        storeWarpEffectsLevels();
+    }
+    );
+});
+
+function storeWarpEffectsNames(){
+    let warpEffectsNamesArray = [];
+    for (let i=0; i < warpEffectsNames.length; i++){
+        warpEffectsNamesArray.push(warpEffectsNames[i].value);
+    }
+    localStorage.setItem('warpEffectsNames'+characterId, JSON.stringify(warpEffectsNamesArray));
+}
+
+function loadWarpEffectsNames(){
+    const savedWarpEffectsNames = JSON.parse(localStorage.getItem('warpEffectsNames'+characterId));
+    if (savedWarpEffectsNames){
+        for (let i=0; i < warpEffectsNames.length; i++){
+            warpEffectsNames[i].value = savedWarpEffectsNames[i];
+        }
+    }
+}
+
+warpEffectsNames.forEach((elem) => {
+    elem.addEventListener('input', () => {
+        storeWarpEffectsNames();
+    }
+    );
+});
+
+function storeCharacterLevel(){
+    const level = characterLevel.value;
+    localStorage.setItem('characterLevel'+characterId, level);
+}
+
+function loadCharacterLevel(){
+    const savedLevel = localStorage.getItem('characterLevel'+characterId);
+    if (savedLevel){
+        characterLevel.value = savedLevel;
+    }
+}
+
+characterLevel.addEventListener('input', () => {
+    storeCharacterLevel();
+});
 
 function storeWeaponLevel(){
     const level = weaponLevel.value;
@@ -92,6 +159,9 @@ function loadData(){
     loadSkillsLevels();
     loadSigilsLevels();
     loadWeaponLevel();
+    loadCharacterLevel();
+    loadWarpEffectsNames();
+    loadWarpEffectsLevels();
 }
 loadData();
 
