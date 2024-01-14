@@ -9,6 +9,7 @@ function filterCharacters() {
   let inputValue = searchInput.value.toLowerCase();
   let factions = activeRegions();
   let elements = activeElements();
+  let progress = activeProgress();
 
   characters.forEach(character => {
     let isVisible = true; 
@@ -20,6 +21,9 @@ function filterCharacters() {
     }
     if (elements.length > 0){
       isVisible = isVisible && elements.includes(character.elem);
+    }
+    if (progress.length > 0){
+      isVisible = isVisible && progress.includes(document.getElementById("select-progress-" + character.id).value);
     }
       character.element.style.display = isVisible ? "flex" : "none"; 
   })
@@ -35,6 +39,12 @@ function activeElements(){
   let cbs = Array.from(document.querySelectorAll('input[cb-filter-option-element]:checked'));
   let elements = cbs.map(cb => cb.value);
   return elements;
+}
+
+function activeProgress(){
+  let cbs = Array.from(document.querySelectorAll('input[cb-filter-option-progress]:checked'));
+  let progress = cbs.map(cb => cb.value);
+  return progress;
 }
 
 function getCharactersInfo(){
@@ -102,22 +112,22 @@ function changeBgCard(element, cardClass){
   var card = element.closest('.card');
 
   switch (selectedValue) {
-    case "not_started":
+    case "Not Started":
       card.style.backgroundColor = "lightgray";
       card.classList.add(cardClass); // Agregar la clase
       break;
-    case "in_progress":
+    case "In Progress":
         card.style.backgroundColor = "khaki";
         card.classList.add(cardClass); // Agregar la clase
         break;
-    case "finished":
+    case "Completed":
       card.style.backgroundColor = "lightgreen";
       card.classList.remove(cardClass); // Quitar la clase
       break;
     default:
       // Puedes manejar otros valores si es necesario
-      card.style.backgroundColor = ""; // Restaurar el color por defecto
-      card.classList.remove(cardClass); // Quitar la clase
+      card.style.backgroundColor = "lightgray";
+      card.classList.add(cardClass); // Agregar la clase
       break;
   }
   // save value in local storage 

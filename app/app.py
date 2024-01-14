@@ -43,7 +43,8 @@ def home():
     region_list = [row[0] for row in regions]
 
     elements = [row[0] for row in db.session.query(Character.element).distinct()]
-    return render_template("home.html", regions = region_list, elements = elements)
+    progress_labels = ["Not Started", "In Progress", "Completed"]
+    return render_template("home.html", regions = region_list, elements = elements, progress_labels = progress_labels)
 
 @app.get("/api/characters-info") 
 def list_characters(): 

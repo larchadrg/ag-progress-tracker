@@ -21,9 +21,18 @@
         <ul class = "filter element">
           <label>Element:</label>
           {% for i in range(elements | length) %}
-            <li class = "filter-item element"> 
+            <li class = "filter-item elements"> 
               <label><input type="checkbox" value="{{elements[i]}}" class = "btn-element" id="cboxElement{{i}}" cb-filter-option-element 
                 onclick="filterCharacters();"/>{{elements[i]}}</label>
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class = "filter progress">
+          <label>Progress:</label>
+          {% for i in range(progress_labels | length) %}
+            <li class = "filter-item progress"> 
+              <label><input type="checkbox" value="{{progress_labels[i]}}" class = "btn-progress" id="cboxProgress{{i}}"
+                cb-filter-option-progress onclick="filterCharacters();"/>{{progress_labels[i]}}</label>
             </li>
           {% endfor %}
         </ul>
@@ -45,11 +54,10 @@
             <div class="character faction" data-faction>Faction: </div>
             <div class="character element" data-element>Element: </div>
             <select class="select progress" id="select-progress-" onchange="changeBgCard(this, 'custom-card');" data-select>
-              <option value="not_started">Not Started</option>
-              <option value="finished">Finished</option>
-              <option value="in_progress">In Progress</option>
+              {% for i in range(progress_labels | length) %}
+              <option value="{{progress_labels[i]}}">{{progress_labels[i]}}</option>
+              {% endfor %}
             </select>
-            <p class = "character progress" data-progress>Progress: </p>
           </div>
         </div>
       </template>

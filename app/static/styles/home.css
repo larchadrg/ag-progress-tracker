@@ -97,10 +97,9 @@ select {
   border: 1px solid #fff;
 }
 
-.btn-faction, .btn-element{
+.btn-faction, .btn-element, .btn-progress{
   position: absolute;
   display: none;
-  color: #fff !important;
 }
 
 .filter-item:has( > label input:checked){
