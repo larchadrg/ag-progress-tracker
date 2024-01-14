@@ -1,6 +1,8 @@
-body { 
-  padding: 3%;
-  background-color: #EBF5FB;
+:root{
+  --color-checked: #bee9e8;
+  --color-bg: #1b4965; 
+  --color-card: #62b6cb;
+  --color-unchecked: #5fa8d3;
 }
 
 h1 {
@@ -10,13 +12,24 @@ h1 {
 
 label {
   font-size: 1.5rem;
+}
 
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+select {
+  max-width: 100px;
 }
 
 .search-wrapper {
     display: flex;
     flex-direction: column;
     gap: .25rem;
+    margin: 2%;
   }
   
   input {
@@ -25,30 +38,30 @@ label {
   
   .user-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
     gap: .25rem;
-    margin-top: 1rem;
+    margin: 2%;
   }
   
   .card {
     border: 1px solid black;
-    background-color: white;
-    padding: .5rem;
+    background-color: var(--color-card);
     text-align: center;
     display: flex;
     justify-content: space-evenly;
     margin: 5px;
-
-  }
+    align-items: center;
+    text-wrap: wrap;
+    }
   .name {
-    margin-bottom: .25rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: bolder;
   }
 
    .model {
     font-style: italic;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 
   
@@ -57,15 +70,43 @@ label {
   }
 
 .character.image {
-  width: 140px;
-  height: 240px;
+  width: 80px;
+  height: 160px;
+  cursor: pointer;
 }
 
 .character.info{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: left;
+  padding-left: 5px;
+}
 
+.filter-item > label {
+  font-size: 1.3rem;
+  padding: 0 5px 0 5px;
+  cursor: pointer;
+}
+
+.filter-item{
+  margin: 3px;
+  background-color: var(--color-unchecked);
+  border-radius: 4px;
+  border: 1px solid #fff;
+}
+
+.btn-faction, .btn-element, .btn-progress{
+  position: absolute;
+  display: none;
+}
+
+.filter-item:has( > label input:checked){
+  background-color: var(--color-checked);
+  border: 1px solid black;
+}
+
+label:has(> input:checked){
+  color: black;
 }

@@ -1,36 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aether Gazer Progress-Tracker</title>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
-    <script src="{{url_for('static', filename='scripts/home.js')}}" defer></script>
-    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block javascript %} <script src="{{url_for('static', filename='scripts/home.js')}}" defer></script> {% endblock %}
+{% block css %} <link rel="stylesheet" href="{{url_for('static', filename='styles/home.css')}}"> {% endblock %}
+{% block body %}
+  <header>
     <h1>Aether Gazer Character List</h1>
-    <div class="search-wrapper">
+  </header>
+    <nav class="search-wrapper">
         <label for="search">Search Character</label>
         <input type="search" id="search" data-search>
-      </div>
+        <ul class = "filter faction">
+          <label>Faction:</label>
+          {% for i in range(regions | length) %}
+            <li class = "filter-item faction"> 
+              <label><input type="checkbox" value="{{regions[i]}}" class = "btn-faction" id="cboxFaction{{i}}" cb-filter-option-region 
+                onclick="filterCharacters();"/>{{regions[i]}}</label>
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class = "filter element">
+          <label>Element:</label>
+          {% for i in range(elements | length) %}
+            <li class = "filter-item elements"> 
+              <label><input type="checkbox" value="{{elements[i]}}" class = "btn-element" id="cboxElement{{i}}" cb-filter-option-element 
+                onclick="filterCharacters();"/>{{elements[i]}}</label>
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class = "filter progress">
+          <label>Progress:</label>
+          {% for i in range(progress_labels | length) %}
+            <li class = "filter-item progress"> 
+              <label><input type="checkbox" value="{{progress_labels[i]}}" class = "btn-progress" id="cboxProgress{{i}}"
+                cb-filter-option-progress onclick="filterCharacters();"/>{{progress_labels[i]}}</label>
+            </li>
+          {% endfor %}
+        </ul>
+    </nav>
       
       <div class="user-cards" data-user-cards-container></div>
 
       <template data-user-template>
         <div class="card">
+          <div class=" character id" data-id></div>
           <div>
-            <img class="character image" src = "/static/images/modifiers/" data-image/>
-            <div class="character name" data-header></div>
-            <div class="character model" data-model></div>
+            <a class="button" href="/character/" id="check-" data-check>
+            <img class="character image" src = "/static/images/modifiers/" data-image/></a>
           </div>
           <div class="character info" data-body>
+            <div class="character name" data-header></div>
             <div class="character model" data-model></div>
-            <div class="character rank" data-rank>Rank: </div>
+            <div class="character rank" data-rank>Initial Rank: </div>
             <div class="character faction" data-faction>Faction: </div>
             <div class="character element" data-element>Element: </div>
+            <select class="select progress" id="select-progress-" onchange="changeBgCard(this, 'custom-card');" data-select>
+              {% for i in range(progress_labels | length) %}
+              <option value="{{progress_labels[i]}}">{{progress_labels[i]}}</option>
+              {% endfor %}
+            </select>
           </div>
         </div>
       </template>
-</body>
-</html>
+{% endblock %}

@@ -2,17 +2,53 @@ const userCardTemplate = document.querySelector("[data-user-template]")
 const userCardContainer = document.querySelector("[data-user-cards-container]")
 const searchInput = document.querySelector("[data-search]")
 
-let users = []
+searchInput.addEventListener("input", filterCharacters);
+getCharactersInfo();
 
-searchInput.addEventListener("input", e => {
-  const value = e.target.value.toLowerCase()
+function filterCharacters() {
+  let inputValue = searchInput.value.toLowerCase();
+  let factions = activeRegions();
+  let elements = activeElements();
+  let progress = activeProgress();
+
   characters.forEach(character => {
-    const isVisible = character.name.toLowerCase().includes(value) || character.model.toLowerCase().includes(value);
-      character.element.classList.toggle("hide", !isVisible)
+    let isVisible = true; 
+    if (inputValue.length > 0) {
+      isVisible = character.name.toLowerCase().startsWith(inputValue) || character.model.toLowerCase().startsWith(inputValue);
+    }
+    if (factions.length > 0){
+      isVisible = isVisible && factions.includes(character.faction);
+    }
+    if (elements.length > 0){
+      isVisible = isVisible && elements.includes(character.elem);
+    }
+    if (progress.length > 0){
+      isVisible = isVisible && progress.includes(document.getElementById("select-progress-" + character.id).value);
+    }
+      character.element.style.display = isVisible ? "flex" : "none"; 
   })
-})
+}
 
-fetch("api/characters-info")
+function activeRegions(){
+  let cbs = Array.from(document.querySelectorAll('input[cb-filter-option-region]:checked'));
+  let regions = cbs.map(cb => cb.value);
+  return regions;
+}
+
+function activeElements(){
+  let cbs = Array.from(document.querySelectorAll('input[cb-filter-option-element]:checked'));
+  let elements = cbs.map(cb => cb.value);
+  return elements;
+}
+
+function activeProgress(){
+  let cbs = Array.from(document.querySelectorAll('input[cb-filter-option-progress]:checked'));
+  let progress = cbs.map(cb => cb.value);
+  return progress;
+}
+
+function getCharactersInfo(){
+  fetch("api/characters-info")
   .then(res => res.json())
   .then(data => {
     characters = data.map(character => {
@@ -23,17 +59,25 @@ fetch("api/characters-info")
       const rank = card.querySelector("[data-rank]")
       const element = card.querySelector("[data-element]")
       const faction = card.querySelector("[data-faction]")
-      console.log(card)
+      const characterId = card.querySelector("[data-id]")
+      const select = card.querySelector("[data-select]")
+      const check = card.querySelector("[data-check]")
 
+      characterId.id = character.id
       header.textContent = character.name
       image.src = image.src + character.image
       model.textContent = character.model
       rank.textContent = rank.textContent + character.rank
       element.textContent = element.textContent + character.element
       faction.textContent = faction.textContent + character.genzone
+      select.id = select.id + character.id
+      check.id = check.id + character.id
+      check.href = check.href + character.id
       userCardContainer.append(card)
       return {
         name: character.name,
+        id: character.id,
+        faction: character.genzone,
         model: character.model,
         rank: character.rank,
         elem: character.element, 
@@ -41,3 +85,51 @@ fetch("api/characters-info")
       }
     })
   })
+
+  .then(() => {
+    // SET LOCAL STORAGE DATA
+      characters.forEach(character => {
+      let selectId = "select-progress-" + character.id;
+      let savedValueSelect = localStorage.getItem(selectId);
+      if (savedValueSelect) {
+        document.getElementById(selectId).value = savedValueSelect;
+      }
+      changeBgCard(document.getElementById(selectId), "card-custom-color");
+    })
+  })
+}
+
+// save card background color
+function saveBgCard(element){
+  let selectedValue = element.value;
+  localStorage.setItem(element.id, selectedValue); 
+}
+
+
+function changeBgCard(element, cardClass){
+  //change background color of card by its select value 
+  var selectedValue = element.options[element.selectedIndex].value;
+  var card = element.closest('.card');
+
+  switch (selectedValue) {
+    case "Not Started":
+      card.style.backgroundColor = "lightgray";
+      card.classList.add(cardClass); // Agregar la clase
+      break;
+    case "In Progress":
+        card.style.backgroundColor = "khaki";
+        card.classList.add(cardClass); // Agregar la clase
+        break;
+    case "Completed":
+      card.style.backgroundColor = "lightgreen";
+      card.classList.remove(cardClass); // Quitar la clase
+      break;
+    default:
+      // Puedes manejar otros valores si es necesario
+      card.style.backgroundColor = "lightgray";
+      card.classList.add(cardClass); // Agregar la clase
+      break;
+  }
+  // save value in local storage 
+  saveBgCard(element);
+}
