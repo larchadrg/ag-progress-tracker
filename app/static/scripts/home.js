@@ -85,28 +85,37 @@ function getCharactersInfo(){
       }
     })
   })
-
   .then(() => {
-    // SET LOCAL STORAGE DATA
-      characters.forEach(character => {
-      let selectId = "select-progress-" + character.id;
-      let savedValueSelect = localStorage.getItem(selectId);
-      if (savedValueSelect) {
-        document.getElementById(selectId).value = savedValueSelect;
-      }
-      changeBgCard(document.getElementById(selectId), "card-custom-color");
+    loadCharacterStatus();
     })
-  })
-}
+  }
 
 // save card background color
-function saveBgCard(element){
-  let selectedValue = element.value;
-  localStorage.setItem(element.id, selectedValue); 
+function changeCharacterStatus(element){
+  let characterStatusAll = {};
+  if (localStorage.getItem('characterStatusAll')) {
+    characterStatusAll = JSON.parse(localStorage.getItem('characterStatusAll'));
+  }
+  let id = element.closest(".card").querySelector("[data-id]").id;
+  const status = element.value;
+  characterStatusAll[id] = status;
+  localStorage.setItem('characterStatusAll', JSON.stringify(characterStatusAll));
+  changeBgCard(element);
 }
 
+async function loadCharacterStatus(){
+  if (localStorage.getItem('characterStatusAll')) {
+    let characterStatusAll = JSON.parse(localStorage.getItem('characterStatusAll'));
+    characters.forEach(character => {
+      id = character.id; 
+      if (character.id in characterStatusAll){
+        document.getElementById("select-progress-" + id).value = characterStatusAll[id];
+      }
+      changeBgCard(document.getElementById("select-progress-" + id));
+    })
+}}
 
-function changeBgCard(element, cardClass){
+function changeBgCard(element){
   //change background color of card by its select value 
   var selectedValue = element.options[element.selectedIndex].value;
   var card = element.closest('.card');
@@ -114,22 +123,17 @@ function changeBgCard(element, cardClass){
   switch (selectedValue) {
     case "Not Started":
       card.style.backgroundColor = "lightgray";
-      card.classList.add(cardClass); // Agregar la clase
       break;
     case "In Progress":
         card.style.backgroundColor = "khaki";
-        card.classList.add(cardClass); // Agregar la clase
         break;
     case "Completed":
       card.style.backgroundColor = "lightgreen";
-      card.classList.remove(cardClass); // Quitar la clase
       break;
     default:
       // Puedes manejar otros valores si es necesario
+      element.options[element.selectedIndex].value = "Not Started";
       card.style.backgroundColor = "lightgray";
-      card.classList.add(cardClass); // Agregar la clase
       break;
   }
-  // save value in local storage 
-  saveBgCard(element);
 }

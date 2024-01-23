@@ -36,6 +36,7 @@ a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .sigil.container{
@@ -130,4 +131,14 @@ input {
 
 #reset:hover{
     background-color: rgb(141, 3, 3);
+}
+
+@media (max-width: 768px) {
+    #main_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
