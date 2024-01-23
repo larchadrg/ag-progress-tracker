@@ -104,16 +104,18 @@ function changeCharacterStatus(element){
 }
 
 async function loadCharacterStatus(){
+  let characterStatusAll = {}
   if (localStorage.getItem('characterStatusAll')) {
-    let characterStatusAll = JSON.parse(localStorage.getItem('characterStatusAll'));
-    characters.forEach(character => {
-      id = character.id; 
-      if (character.id in characterStatusAll){
-        document.getElementById("select-progress-" + id).value = characterStatusAll[id];
-      }
-      changeBgCard(document.getElementById("select-progress-" + id));
-    })
-}}
+    characterStatusAll = JSON.parse(localStorage.getItem('characterStatusAll'));
+  }
+  characters.forEach(character => {
+    let id = character.id; 
+    if (id in characterStatusAll){
+      document.getElementById("select-progress-" + id).value = characterStatusAll[id];
+    }
+    changeBgCard(document.getElementById("select-progress-" + id));
+  })
+}
 
 function changeBgCard(element){
   //change background color of card by its select value 
