@@ -29,6 +29,7 @@ function filterCharacters() {
   })
 }
 
+// the following functions get the activated filters on the page. 
 function activeRegions(){
   let cbs = Array.from(document.querySelectorAll('input[cb-filter-option-region]:checked'));
   let regions = cbs.map(cb => cb.value);

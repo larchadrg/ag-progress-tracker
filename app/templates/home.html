@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 {% block title %} Home {% endblock %}
-{% block javascript %} <script src="{{url_for('static', filename='scripts/home.js')}}" defer></script> {% endblock %}
+{% block javascript %} 
+  <script src="{{url_for('static', filename='scripts/home.js')}}" defer></script>
+  <script src="{{url_for('static', filename='scripts/backupManagement.js')}}" defer></script>
+{% endblock %}
 {% block css %} <link rel="stylesheet" href="{{url_for('static', filename='styles/home.css')}}"> {% endblock %}
 {% block body %}
   <header>
     <h1>Aether Gazer Character List</h1>
   </header>
+  <section class="backup-management">
+    <button onclick="storeBackup();">Store Backup</button>
+    <button onclick="restoreBackup();">Restore Backup</button>
+  </section>
     <nav class="search-wrapper">
         <label for="search">Search Character</label>
         <input type="search" id="search" data-search>
