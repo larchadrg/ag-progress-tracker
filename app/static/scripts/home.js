@@ -8,7 +8,7 @@ getCharactersInfo();
 function filterCharacters() {
   let inputValue = searchInput.value.toLowerCase();
   let factions = activeFilters("region");
-  let elements = activeFilters("element");
+  let selectedElements = activeFilters("element");
   let progress = activeFilters("progress");
 
   characters.forEach(character => {
@@ -19,9 +19,9 @@ function filterCharacters() {
     if (factions.length > 0){
       isVisible = isVisible && factions.includes(character.faction);
     }
-    if (elements.length > 0){
+    if (selectedElements.length > 0){
       //checks if has at least one element from the charcter
-      isVisible = isVisible && elements.some(element => character.elem.includes(element));
+      isVisible = isVisible && selectedElements.some(element => character.elem.includes(element));
     }
     if (progress.length > 0){
       isVisible = isVisible && progress.includes(document.getElementById("select-progress-" + character.id).value);
