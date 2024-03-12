@@ -13,7 +13,6 @@ function removeCharacterData(){
     localStorage.removeItem('characterLevel'+characterId);
     localStorage.removeItem('warpEffectsNames'+characterId);
     localStorage.removeItem('warpEffectsLevels'+characterId);
-
 }
 
 function storeWarpEffectsLevels(){
@@ -175,5 +174,3 @@ function loadData(){
     loadWarpEffectsLevels();
 }
 loadData();
-
-//TODO: LOAD WARP EFFECT LEVELS AND NAMES FROM LOCAL STORAGE

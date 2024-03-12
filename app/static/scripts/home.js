@@ -7,9 +7,9 @@ getCharactersInfo();
 
 function filterCharacters() {
   let inputValue = searchInput.value.toLowerCase();
-  let factions = activeRegions();
-  let elements = activeElements();
-  let progress = activeProgress();
+  let factions = activeFilters("region");
+  let elements = activeFilters("element");
+  let progress = activeFilters("progress");
 
   characters.forEach(character => {
     let isVisible = true; 
@@ -20,7 +20,8 @@ function filterCharacters() {
       isVisible = isVisible && factions.includes(character.faction);
     }
     if (elements.length > 0){
-      isVisible = isVisible && elements.includes(character.elem);
+      //checks if has at least one element from the charcter
+      isVisible = isVisible && elements.some(element => character.elem.includes(element));
     }
     if (progress.length > 0){
       isVisible = isVisible && progress.includes(document.getElementById("select-progress-" + character.id).value);
@@ -29,23 +30,10 @@ function filterCharacters() {
   })
 }
 
-// the following functions get the activated filters on the page. 
-function activeRegions(){
-  let cbs = Array.from(document.querySelectorAll('input[cb-filter-option-region]:checked'));
-  let regions = cbs.map(cb => cb.value);
-  return regions;
-}
-
-function activeElements(){
-  let cbs = Array.from(document.querySelectorAll('input[cb-filter-option-element]:checked'));
-  let elements = cbs.map(cb => cb.value);
-  return elements;
-}
-
-function activeProgress(){
-  let cbs = Array.from(document.querySelectorAll('input[cb-filter-option-progress]:checked'));
-  let progress = cbs.map(cb => cb.value);
-  return progress;
+function activeFilters(category){
+  let cbs = Array.from(document.querySelectorAll('input[cb-filter-option-' + category + ']:checked'));
+  let filters = cbs.map(cb => cb.value);
+  return filters;
 }
 
 function getCharactersInfo(){
@@ -69,7 +57,7 @@ function getCharactersInfo(){
       image.src = image.src + character.image
       model.textContent = character.model
       rank.textContent = rank.textContent + character.rank
-      element.textContent = element.textContent + character.element
+      element.textContent = element.textContent + character.elements
       faction.textContent = faction.textContent + character.genzone
       select.id = select.id + character.id
       check.id = check.id + character.id
@@ -81,7 +69,7 @@ function getCharactersInfo(){
         faction: character.genzone,
         model: character.model,
         rank: character.rank,
-        elem: character.element, 
+        elem: character.elements, 
         element: card
       }
     })
@@ -134,7 +122,6 @@ function changeBgCard(element){
       card.style.backgroundColor = "lightgreen";
       break;
     default:
-      // Puedes manejar otros valores si es necesario
       element.options[element.selectedIndex].value = "Not Started";
       card.style.backgroundColor = "lightgray";
       break;
