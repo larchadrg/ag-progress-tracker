@@ -56,14 +56,9 @@
         <div class="character personal_rank">
           Rank:
           <select class="character personal_rank selector">
-            <option value="none">None</option>
-            <option value="omega">Ω</option>
-            <option value="SSS">SSS</option>
-            <option value="SS">SS</option>
-            <option value="S">S</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
+            {% for r in ranks %}
+            <option value="{{r.value}}">{{r.name}}</option>
+            {% endfor %}
           </select>
         </div>
         <button

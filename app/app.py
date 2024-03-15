@@ -45,6 +45,12 @@ class Element(db.Model):
     character_id:int = db.Column(db.Integer, db.ForeignKey('characters.id'))
     character = relationship("Character", back_populates="elements")
 
+@dataclass 
+class Rank(db.Model): 
+    __tablename__ = 'ranks'
+    name:str = db.Column(db.String)
+    value:str = db.Column(db.String, primary_key=True)
+
 @app.route("/")
 def home(): 
     regions = db.session.query(Character.genzone).distinct()
@@ -80,9 +86,11 @@ def character_info(id):
     character = db.session.query(Character).filter(Character.id == id).first()
     sigils = db.session.query(Sigil).order_by(Sigil.name).all()
     warp_skills = db.session.query(WarpSkill).order_by(WarpSkill.name).all()
+    ranks = db.session.query(Rank).all()
+    print(ranks)
 
     return render_template("character.html", character=character, sigils = sigils,
-                            warp_skills = warp_skills)
+                            warp_skills = warp_skills, ranks = ranks)
 
 @app.get("/api/sigils")
 def list_sigils(): 
