@@ -19,7 +19,7 @@ body {
 
 header {
   padding-block: 1rem;
-  width: 1fr;
+  background-color: var(--color-bg);
 }
 
 header > h1 {

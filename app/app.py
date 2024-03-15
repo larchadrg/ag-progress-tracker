@@ -75,11 +75,6 @@ def list_characters():
 
     return jsonify(characters_json)
 
-
-def character_elements(id):
-    character = db.session.query(Character).join(Element).filter(Character.id == id).first().elements
-    return [element.name for element in character]
-
 @app.route("/character/<int:id>")
 def character_info(id):
     character = db.session.query(Character).filter(Character.id == id).first()

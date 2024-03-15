@@ -6,10 +6,7 @@
 {% endblock %}
 {% block css %} <link rel="stylesheet" href="{{url_for('static', filename='styles/home.css')}}"> {% endblock %}
 {% block body %}
-  <header>
-    <h1>Aether Gazer Character List</h1>
-  </header>
-  <section class="backup-management">
+  <section class="backup-management container">
     <button onclick="storeBackup();">Store Backup</button>
     <button onclick="restoreBackup();">Restore Backup</button>
   </section>
