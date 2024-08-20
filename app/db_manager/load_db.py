@@ -1,10 +1,10 @@
 import sqlite3
 import csv
 import os
+from config import ROOT_PATH
 
-ROOT_PATH = r"/home/lara-uni/Documents/ag-progress-tracker"
 DB_PATH = os.path.join(ROOT_PATH, "app", "instance", "database.db")
-DELIMITER_CSV = ";"
+DELIMITER_CSV = ","
 
 def load_characters():
     CHRACTERS_CSV_PATH = os.path.join(ROOT_PATH, "characters.csv")
