@@ -2,7 +2,7 @@ import sqlite3
 import os
 from .config import ROOT_PATH
 
-DB_PATH = os.path.join(ROOT_PATH, "app", "instance", "database.db")
+DB_PATH = os.path.join(ROOT_PATH, "app", "instance")
 SCHEMA_PATH = os.path.join(ROOT_PATH, 'app', 'db_manager', 'schema.sql')
 
 def create_database(): 
@@ -11,7 +11,7 @@ def create_database():
         sql_script = sql_file.read()
 
     try:
-        connection = sqlite3.connect(DB_PATH)
+        connection = sqlite3.connect(DB_PATH +  "/database.db")
         c = connection.cursor()
         c.executescript(sql_script)
         connection.commit()
