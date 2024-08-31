@@ -1,5 +1,5 @@
 import os 
-from config import ROOT_PATH
+from .config import ROOT_PATH
 
 CHARACTERS_CSV_PATH = os.path.join(ROOT_PATH,  'app', 'db_manager', 'csv_files', "characters.csv")
 

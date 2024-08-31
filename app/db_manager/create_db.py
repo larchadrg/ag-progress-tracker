@@ -1,7 +1,6 @@
 import sqlite3
-import csv
 import os
-from config import ROOT_PATH
+from .config import ROOT_PATH
 
 DB_PATH = os.path.join(ROOT_PATH, "app", "instance", "database.db")
 SCHEMA_PATH = os.path.join(ROOT_PATH, 'app', 'db_manager', 'schema.sql')

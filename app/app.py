@@ -3,8 +3,13 @@ from flask_sqlalchemy import SQLAlchemy
 from dataclasses import dataclass
 import os 
 from sqlalchemy.orm import relationship
+from .db_manager.create_db import create_database
+from .db_manager.load_db import load_ag_data
 
 app = Flask(__name__)
+
+create_database()
+load_ag_data()
 
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///" + os.path.join(app.root_path, "instance/database.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
