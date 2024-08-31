@@ -20,6 +20,7 @@ class Character(db.Model):
     genzone:str = db.Column(db.String)
     image:str = db.Column(db.String)
     elements = relationship("Element", back_populates="character")
+    has_synergy_weapon:int = db.Column(db.Integer)
 
 @dataclass
 class Sigil(db.Model):

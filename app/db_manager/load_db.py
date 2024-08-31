@@ -2,49 +2,40 @@ import sqlite3
 import csv
 import os
 from config import ROOT_PATH
+from csv_paths import *
+from insert_queries import * 
 
 DB_PATH = os.path.join(ROOT_PATH, "app", "instance", "database.db")
-DELIMITER_CSV = ","
 
-def load_characters():
-    CHRACTERS_CSV_PATH = os.path.join(ROOT_PATH, "characters.csv")
 
+def load_db_data(path, delimiter, columns, query, skip_head=True):
     try:
-        # Connect to the SQLite database
         connection = sqlite3.connect(DB_PATH)
         c = connection.cursor()
-
-        # Open and read the CSV file
-        with open(CHRACTERS_CSV_PATH, 'r', encoding="utf-8") as file:
-            reader = csv.reader(file, delimiter=DELIMITER_CSV)  # Use semicolon as delimiter
-            next(reader)  # Skip the header row
+        with open(path, 'r', encoding="utf-8") as file:
+            reader = csv.reader(file, delimiter=delimiter)  # Use semicolon as delimiter
+            if skip_head: 
+                next(reader)  # Skip the header row
             
             for row in reader:
-                print(f"Row data: {row}")  # Debug: Print each row's data
 
-                if len(row) != 6:
-                    print(f"Warning: Row does not have 6 columns. Skipping row: {row}")
+                if len(row) != columns:
+                    print(f"Warning: Row does not have {columns} columns. Skipping row: {row}")
                     continue
 
-                c.execute("""
-                    INSERT INTO characters (id, name, model, rank, genzone, image)
-                    VALUES (?, ?, ?, ?, ?, ?)
-                    ON CONFLICT(id) DO UPDATE SET
-                        name = excluded.name,
-                        model = excluded.model,
-                        rank = excluded.rank,
-                        genzone = excluded.genzone,
-                        image = excluded.image
-                """, row)
+                c.execute(query, row)
 
-        # Commit changes and close the connection
-        connection.commit()
+                connection.commit()
     except FileNotFoundError:
-        print(f"Error: The file {CHRACTERS_CSV_PATH} does not exist.")
+        print(f"Error: The file {path} does not exist.")
     except sqlite3.Error as e:
         print(f"Database error: {e}")
     finally:
         connection.close()
 
-# Call the function
-load_characters()
+if __name__ == '__main__': 
+    load_db_data(CHARACTERS_CSV_PATH, ",", 7, CHARACTERS_QUERY, True)
+    load_db_data(ELEMENTS_CSV_PATH, '|', 3, ELEMENTS_QUERY, False) 
+    load_db_data(RANKS_CSV_PATH, '|', 2, RANKS_QUERY, False) 
+    load_db_data(SIGILS_CSV_PATH, '|',3,SIGILS_QUERY, False) 
+    load_db_data(WARP_SKILLS_CSV_PATH,'|',5, WARP_SKILLS_QUERY, False)
