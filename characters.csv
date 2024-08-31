@@ -1,56 +1,55 @@
-id;name;model;rank;genzone;image
-139;Verthandi;New Pact;B;Yggdrasill;Modifier-New_Pact-Icon.png
-140;Zenkibo Tengu;Surefire;B;Shinou;Modifier-Surefire-Icon.png
-141;Poseidon;Tidal Song;B;Olympus;Modifier-Tidal_Song-Icon.png
-142;Osiris;The Innocence;A;Nile;Modifier-The_Innocence-Icon.png
-143;Hodur;Dark Mistletoe;A;Yggdrasill;Modifier-Dark_Mistletoe-Icon.png
-144;Leviathan;Drifting Flurry;A;Asterism;Modifier-Drifting_Flurry-Icon.png
-145;Nuadha;Airgetlam;A;Asterism;Modifier-Airgetlam-Icon.png
-146;Sobek;Croc Rage;A;Nile;Modifier-Croc_Rage-Icon.png
-147;Shu;Gusty Lance;A;Nile;Modifier-Gusty_Lance-Icon.png
-148;Tsukuyomi;Sakubo;A;Shinou;Modifier-Sakubo-Icon.png
-149;Vidar;Frost Fang;A;Yggdrasill;Modifier-Frost_Fang-Icon.png
-150;Hera;Radiant Feather;A;Olympus;Modifier-Radiant_Feather-Icon.png
-151;Buzenbo Tengu;Shinku;A;Shinou;Modifier-Shinku-Icon.png
-152;Apollo;The Glare;A;Olympus;Modifier-The_Glare-Icon.png
-153;Verthandi;Archaic Oath;A;Yggdrasill;Modifier-Archaic_Oath-Icon.png
-154;Zenkibo Tengu;Comet R4Y;A;Shinou;Modifier-Comet_R4Y-Icon.png
-155;Hermes;Windwalker;A;Olympus;Modifier-Windwalker-Icon.png
-156;Kali;Thundertusk;A;Asterism;Modifier-Thundertusk-Icon.png
-157;Oneiroi;Drowsie;A;Olympus;Modifier-Drowsie-Icon.png
-158;Heimdall;Enlightening;A;Yggdrasill;Modifier-Enlightening-Icon.png
-159;Enlil;Cleansing Wind;A;Asterism;Modifier-Cleansing_Wind-Icon.png
-160;Kingu;Wasteland Fiend;A;Asterism;Modifier-Wasteland_Fiend-Icon.png
-161;Bastet;Ailuros;A;Nile;Modifier-Ailuros-Icon.png
-162;Asura;R?hu;S;Asterism;Modifier-Rahu-Icon.png
-163;Poseidon;Arctic Abyss;S;Olympus;Modifier-Arctic_Abyss-Icon.png
-164;Tyr;AblaZe;S;Yggdrasill;Modifier-AblaZe-Icon.png
-165;Kagutsuchi;Ryugiri;S;Shinou;Modifier-Ryugiri-Icon.png
-166;Kuninotokotachi;Jin-ei;S;Shinou;Modifier-Jin-ei-Icon.png
-167;Ookuninushi;Early Sakura;S;Shinou;Modifier-Early_Sakura-Icon.png
-168;Tsukuyomi;Shinri;S;Shinou;Modifier-Shinri-Icon.png
-169;Osiris;Living Soul;S;Nile;Modifier-Living_Soul-Icon.png
-170;Hel;Darkstar;S;Yggdrasill;Modifier-Darkstar-Icon.png
-171;Hera;Phantasmal Dawn;S;Olympus;Modifier-Phantasmal_Dawn-Icon.png
-172;Skadi;Waverender;S;Yggdrasill;Modifier-Waverender-Icon.png
-173;Leviathan;Countertide;S;Asterism;Modifier-Countertide-Icon.png
-174;Hades;Puppet Master;S;Olympus;Modifier-Puppet_Master-Icon.png
-175;Shu;Flowfly Mist;S;Nile;Modifier-Flowfly_Mist-Icon.png
-176;Athena;Chord of Convallaria;S;Olympus;Modifier-Chord_of_Convallaria-Icon.png
-177;Oceanus;Backflowing;S;Olympus;Modifier-Backflowing-Icon.png
-178;Marduk;Rage Serpent;S;Asterism;Modifier-Rage_Serpent-Icon.png
-179;Anubis;Jackal;S;Nile;Modifier-Jackal-Icon.png
-180;Thor;Roaring Thunder;S;Yggdrasill;Modifier-Roaring_Thunder-Icon.png
-181;Lingguang;Untainted Heart;S;Tianyuan;Modifier-Untainted_Heart-Icon.png
-182;Jinwu;Tenblaze;S;Tianyuan;Modifier-Tenblaze-Icon.png
-183;Mengzhang;Azure Lord;S;Tianyuan;Modifier-Azure-Lord-Icon.png
-184;Gengchen;TaiYi;S;Tianyuan;Modifier-TaiYi-Icon.png
-185;Luliang;Omnisight;S;Tianyuan;Modifier-Omnisight-Icon.png
-186;YingZhao;Winged Gardener;S;Tianyuan;Modifier-YingZhao-Icon.png
-187;Tyr;Firebrand;S;Yggdrasill;Modifier-Tyr_Firebrand-Icon.png
-188;Kuramitsuha;So-ei;S;Shinou;Modifier-Kuramitsuha-Icon.png
-189;Izanami;Flower of Yomi;S;Shinou;Modifier-Izanami-Icon.png
-190;Kagutsuchi;Madoibi Scorched;S;Shinou;Modifier-Kagutsuchi_Madoibi-Icon.png
-191;Buzenbo Tengu;Somezakura;S;Shinou;Modifier-Buzenbo_Somezakura-Icon.png
-192;Sekhmet;The Lioness;S;Nile;Modifier-Sekhmet-Icon.png
-;;;;;
+id,name,model,rank,genzone,image
+139,Verthandi,New Pact,B,Yggdrasill,Modifier-New_Pact-Icon.png
+140,Zenkibo Tengu,Surefire,B,Shinou,Modifier-Surefire-Icon.png
+141,Poseidon,Tidal Song,B,Olympus,Modifier-Tidal_Song-Icon.png
+142,Osiris,The Innocence,A,Nile,Modifier-The_Innocence-Icon.png
+143,Hodur,Dark Mistletoe,A,Yggdrasill,Modifier-Dark_Mistletoe-Icon.png
+144,Leviathan,Drifting Flurry,A,Asterism,Modifier-Drifting_Flurry-Icon.png
+145,Nuadha,Airgetlam,A,Asterism,Modifier-Airgetlam-Icon.png
+146,Sobek,Croc Rage,A,Nile,Modifier-Croc_Rage-Icon.png
+147,Shu,Gusty Lance,A,Nile,Modifier-Gusty_Lance-Icon.png
+148,Tsukuyomi,Sakubo,A,Shinou,Modifier-Sakubo-Icon.png
+149,Vidar,Frost Fang,A,Yggdrasill,Modifier-Frost_Fang-Icon.png
+150,Hera,Radiant Feather,A,Olympus,Modifier-Radiant_Feather-Icon.png
+151,Buzenbo Tengu,Shinku,A,Shinou,Modifier-Shinku-Icon.png
+152,Apollo,The Glare,A,Olympus,Modifier-The_Glare-Icon.png
+153,Verthandi,Archaic Oath,A,Yggdrasill,Modifier-Archaic_Oath-Icon.png
+154,Zenkibo Tengu,Comet R4Y,A,Shinou,Modifier-Comet_R4Y-Icon.png
+155,Hermes,Windwalker,A,Olympus,Modifier-Windwalker-Icon.png
+156,Kali,Thundertusk,A,Asterism,Modifier-Thundertusk-Icon.png
+157,Oneiroi,Drowsie,A,Olympus,Modifier-Drowsie-Icon.png
+158,Heimdall,Enlightening,A,Yggdrasill,Modifier-Enlightening-Icon.png
+159,Enlil,Cleansing Wind,A,Asterism,Modifier-Cleansing_Wind-Icon.png
+160,Kingu,Wasteland Fiend,A,Asterism,Modifier-Wasteland_Fiend-Icon.png
+161,Bastet,Ailuros,A,Nile,Modifier-Ailuros-Icon.png
+162,Asura,R?hu,S,Asterism,Modifier-Rahu-Icon.png
+163,Poseidon,Arctic Abyss,S,Olympus,Modifier-Arctic_Abyss-Icon.png
+164,Tyr,AblaZe,S,Yggdrasill,Modifier-AblaZe-Icon.png
+165,Kagutsuchi,Ryugiri,S,Shinou,Modifier-Ryugiri-Icon.png
+166,Kuninotokotachi,Jin-ei,S,Shinou,Modifier-Jin-ei-Icon.png
+167,Ookuninushi,Early Sakura,S,Shinou,Modifier-Early_Sakura-Icon.png
+168,Tsukuyomi,Shinri,S,Shinou,Modifier-Shinri-Icon.png
+169,Osiris,Living Soul,S,Nile,Modifier-Living_Soul-Icon.png
+170,Hel,Darkstar,S,Yggdrasill,Modifier-Darkstar-Icon.png
+171,Hera,Phantasmal Dawn,S,Olympus,Modifier-Phantasmal_Dawn-Icon.png
+172,Skadi,Waverender,S,Yggdrasill,Modifier-Waverender-Icon.png
+173,Leviathan,Countertide,S,Asterism,Modifier-Countertide-Icon.png
+174,Hades,Puppet Master,S,Olympus,Modifier-Puppet_Master-Icon.png
+175,Shu,Flowfly Mist,S,Nile,Modifier-Flowfly_Mist-Icon.png
+176,Athena,Chord of Convallaria,S,Olympus,Modifier-Chord_of_Convallaria-Icon.png
+177,Oceanus,Backflowing,S,Olympus,Modifier-Backflowing-Icon.png
+178,Marduk,Rage Serpent,S,Asterism,Modifier-Rage_Serpent-Icon.png
+179,Anubis,Jackal,S,Nile,Modifier-Jackal-Icon.png
+180,Thor,Roaring Thunder,S,Yggdrasill,Modifier-Roaring_Thunder-Icon.png
+181,Lingguang,Untainted Heart,S,Tianyuan,Modifier-Untainted_Heart-Icon.png
+182,Jinwu,Tenblaze,S,Tianyuan,Modifier-Tenblaze-Icon.png
+183,Mengzhang,Azure Lord,S,Tianyuan,Modifier-Azure-Lord-Icon.png
+184,Gengchen,TaiYi,S,Tianyuan,Modifier-TaiYi-Icon.png
+185,Luliang,Omnisight,S,Tianyuan,Modifier-Omnisight-Icon.png
+186,YingZhao,Winged Gardener,S,Tianyuan,Modifier-YingZhao-Icon.png
+187,Tyr,Firebrand,S,Yggdrasill,Modifier-Tyr_Firebrand-Icon.png
+188,Kuramitsuha,So-ei,S,Shinou,Modifier-Kuramitsuha-Icon.png
+189,Izanami,Flower of Yomi,S,Shinou,Modifier-Izanami-Icon.png
+190,Kagutsuchi,Madoibi Scorched,S,Shinou,Modifier-Kagutsuchi_Madoibi-Icon.png
+191,Buzenbo Tengu,Somezakura,S,Shinou,Modifier-Buzenbo_Somezakura-Icon.png
+192,Sekhmet,The Lioness,S,Nile,Modifier-Sekhmet-Icon.png
