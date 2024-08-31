@@ -1,6 +1,7 @@
 const currentRankSelector = document.querySelector('.character.personal_rank.selector');
 const characterId = document.querySelector('.characterId').textContent;
 const weaponLevel = document.querySelector('.weapon.level.selector');
+const weaponSynergyLevel = document.querySelector('#synergy-weapon-input');
 const characterLevel = document.querySelector('.character.level.selector');
 const warpEffectsNames = document.querySelectorAll('.warp.effect');
 const warpEffectsLevels = document.querySelectorAll('.warp.level.selector');
@@ -13,7 +14,23 @@ function removeCharacterData(){
     localStorage.removeItem('characterLevel'+characterId);
     localStorage.removeItem('warpEffectsNames'+characterId);
     localStorage.removeItem('warpEffectsLevels'+characterId);
+    localStorage.removeItem('weaponSynergyLevel'+characterId); 
 }
+
+function storeWeaponSynergyLevel(){
+    localStorage.setItem('weaponSynergyLevel'+characterId, weaponSynergyLevel.value); 
+}
+
+function loadWeaponSynergyLevel(){
+    const savedValue = localStorage.getItem('weaponSynergyLevel'+characterId); 
+    if (savedValue){
+        weaponSynergyLevel.value = savedValue; 
+    }
+}
+
+weaponSynergyLevel.addEventListener('input', ()=>{
+    storeWeaponSynergyLevel(); 
+})
 
 function storeWarpEffectsLevels(){
     let warpEffectsLevelsArray = [];
