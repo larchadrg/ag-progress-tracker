@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, render_template
+from flask import Blueprint, jsonify, render_template, request
 from sqlalchemy import or_, and_
 from ..models import db
 from ..models.character import Character  # Importa el modelo Character
@@ -45,12 +45,15 @@ def character_info(id):
     sigils = db.session.query(Sigil).order_by(Sigil.name).all()
     warp_skills = db.session.query(WarpSkill).order_by(WarpSkill.name).all()
     ranks = db.session.query(Rank).all()
-    selectable_functors = db.session.query(Functor).filter(
-        or_(
-            and_(Functor.main_character_id == None, Functor.faction == character.genzone),
-            Functor.main_character_id == character.id
-        )
-    ).all()
+    selectable_functors = db.session.query(Functor).filter(or_(and_(Functor.main_character_id == 'NULL', Functor.faction == character.genzone), Functor.main_character_id == character.id)).all()
 
-    return render_template("character.html", character=character, sigils=sigils,
-                           warp_skills=warp_skills, ranks=ranks, functors=selectable_functors)
+    return render_template("character.html", character=character, sigils = sigils,
+                            warp_skills = warp_skills, ranks = ranks, functors = selectable_functors)
+
+@character_bp.get("/get_fuctor_img/")
+def get_functor_img():
+    id = request.args.get('functor_selector', '')
+    functor = db.session.query(Functor).get(id)
+    if not functor:
+        return ""
+    return render_template('partials/functor_img.html', functor=functor)
