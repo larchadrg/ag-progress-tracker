@@ -39,6 +39,6 @@ def load_ag_data():
     load_db_data(RANKS_CSV_PATH, '|', 2, RANKS_QUERY, False) 
     load_db_data(SIGILS_CSV_PATH, '|',3,SIGILS_QUERY, False) 
     load_db_data(WARP_SKILLS_CSV_PATH,'|',5, WARP_SKILLS_QUERY, False)
-
+    load_db_data(FUNCTORS_CSV_PATH, ';', 6, FUNCTORS_QUERY, True)
 if __name__ == '__main__': 
     load_ag_data()

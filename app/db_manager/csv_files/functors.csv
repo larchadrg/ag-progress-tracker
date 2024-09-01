@@ -1,0 +1,86 @@
+id;Functor;Faction;Rarity;Character;Picture
+101;Herald - Hippo;Olympus;★★★;NULL;Herald - Hippo.png
+102;Herald - Melampus;Olympus;★★★★;NULL;Herald - Melampus.png
+103;Herald - Laelaps;Olympus;★★★★;NULL;Herald - Laelaps.png
+104;Herald - The Unawakened;Olympus;★★★★★;NULL;Herald - The Unawakened.png
+105;Herald - Hydra;Olympus;★★★★★;NULL;Herald - Hydra.png
+106;Herald - Amphitrite;Olympus;★★★★★;141;Herald - Amphitrite.png
+107;Herald - Miriam;Olympus;★★★★★;142;Herald - Miriam.png
+108;Herald - Pegasus;Olympus;★★★★★;155;Herald - Pegasus.png
+109;Herald - Chrysomallos;Olympus;★★★★★;157;Herald - Chrysomallos.png
+110;Herald - Moroklos;Olympus;★★★★★;163;Herald - Moroklos.png
+111;Herald - Cerberus;Olympus;★★★★★;150;Herald - Cerberus.png
+112;Herald - Perseus;Olympus;★★★★★;176;Herald - Perseus.png
+113;Herald - Ptolemy;Olympus;★★★★★;152;Herald - Ptolemy.png
+114;Herald - Dinah;Olympus;★★★★★;141;Herald - Dinah.png
+115;Herald - Ganymede;Olympus;★★★★★;150;Herald - Ganymede.png
+201;Pharaoh - Akhenaten;Nile;★★★;NULL;Pharaoh - Akhenaten.png
+202;Pharaoh - Intef I;Nile;★★★★;NULL;Pharaoh - Intef I.png
+203;Pharaoh - Thutmose;Nile;★★★★;NULL;Pharaoh - Thutmose.png
+204;Pharaoh - The Unawakened;Nile;★★★★★;NULL;Pharaoh - The Unawakened.png
+205;Pharaoh - Userkaf;Nile;★★★★★;NULL;Pharaoh - Userkaf.png
+206;Pharaoh - Semerkhet;Nile;★★★★★;162;Pharaoh - Semerkhet.png
+207;Pharaoh - Ibi;Nile;★★★★★;161;Pharaoh - Ibi.png
+208;Pharaoh - Menkaure;Nile;★★★★★;146;Pharaoh - Menkaure.png
+209;Pharaoh - Netjerykhet;Nile;★★★★★;142;Pharaoh - Netjerykhet.png
+210;Pharaoh - Sahure;Nile;★★★★★;179;Pharaoh - Sahure.png
+211;Pharaoh - Hekenemmae;Nile;★★★★★;179;Pharaoh - Hekenemmae.png
+212;Pharaoh - Khaba;Nile;★★★★★;142;Pharaoh - Khaba.png
+213;Pharaoh - Khufu;Nile;★★★★★;146;Pharaoh - Khufu.png
+301;Shikigami - Kerakeraonna;Shinou;★★★;NULL;Shikigami - Kerakeraonna.png
+302;Shikigami - Yamabiko;Shinou;★★★★;NULL;Shikigami - Yamabiko.png
+303;Shikigami - Raijū;Shinou;★★★★;NULL;Shikigami - Raijū.png
+304;Shikigami - The Unawakened;Shinou;★★★★★;NULL;Shikigami - The Unawakened.png
+305;Shikigami - Aosaginohi;Shinou;★★★★★;NULL;Shikigami - Aosaginohi.png
+306;Shikigami - Tamano-no-Mae;Shinou;★★★★★;166;Shikigami - Tamano-no-Mae.png
+307;Shikigami - Seiranubume;Shinou;★★★★★;191;Shikigami - Seiranubume.png
+308;Shikigami - Higanookamudumi;Shinou;★★★★★;189;Shikigami - Higanookamudumi.png
+309;Shikigami - Kageroushiranui;Shinou;★★★★★;165;Shikigami - Kageroushiranui.png
+310;Shikigami - Amanojyaku;Shinou;★★★★★;154;Shikigami - Amanojyaku.png
+311;Shikigami - Sōgenbi;Shinou;★★★★★;139;Shikigami - Sōgenbi.png
+312;Shikigami - Kyōkotsu;Shinou;★★★★★;148;Shikigami - Kyōkotsu.png
+313;Shikigami - Momiji;Shinou;★★★★★;151;Shikigami - Momiji.png
+314;Shikigami - Shirodooji;Shinou;★★★★★;154;Shikigami - Shirodooji.png
+315;Shikigami - Enmusubi;Shinou;★★★★★;148;Shikigami - Enmusubi.png
+316;Shikigami - Kurodooji;Shinou;★★★★★;187;Shikigami - Kurodooji.png
+317;Shikigami - Itsumade;Shinou;★★★★★;148;Shikigami - Itsumade.png
+401;Elf - Maeglin;Yggdrasill;★★★;NULL;Elf - Maeglin.png
+402;Elf - Thiam;Yggdrasill;★★★★;NULL;Elf - Thiam.png
+403;Elf - Merfil;Yggdrasill;★★★★;NULL;Elf - Merfil.png
+404;Elf - The Unawakened;Yggdrasill;★★★★★;NULL;Elf - The Unawakened.png
+405;Elf - Galadriel;Yggdrasill;★★★★★;NULL;Elf - Galadriel.png
+406;Elf - Arngrim;Yggdrasill;★★★★★;164;Elf - Arngrim.png
+407;Elf - Grey;Yggdrasill;★★★★★;172;Elf - Grey.png
+408;Elf - Eyawin;Yggdrasill;★★★★★;167;Elf - Eyawin.png
+409;Elf - Verenth;Yggdrasill;★★★★★;171;Elf - Verenth.png
+410;Elf - Freya;Yggdrasill;★★★★★;176;Elf - Freya.png
+411;Elf - Balthazar;Yggdrasill;★★★★★;176;Elf - Balthazar.png
+412;Elf - Trojilla;Yggdrasill;★★★★★;164;Elf - Trojilla.png
+501;Golem - Phor;Giant;★★★;NULL;Golem - Phor.png
+502;Golem - Poro;Giant;★★★★;NULL;Golem - Poro.png
+503;Golem - Tolos;Giant;★★★★;NULL;Golem - Tolos.png
+504;Golem - The Unawakened;Giant;★★★★★;NULL;Golem - The Unawakened.png
+505;Golem - Sahrga;Giant;★★★★★;NULL;Golem - Sahrga.png
+506;Golem - Magon;Giant;★★★★★;193;Golem - Magon.png
+507;Golem - Korran;Giant;★★★★★;175;Golem - Korran.png
+508;Golem - Jor;Giant;★★★★★;188;Golem - Jor.png
+509;Golem - Ghiel;Giant;★★★★★;167;Golem - Ghiel.png
+510;Golem - Huron;Giant;★★★★★;175;Golem - Huron.png
+511;Golem - Dolis;Giant;★★★★★;177;Golem - Dolis.png
+512;Golem - Elai;Giant;★★★★★;171;Golem - Elai.png
+601;Demon - Daimon;Demons;★★★;NULL;Demon - Daimon.png
+602;Demon - Karaball;Demons;★★★★;NULL;Demon - Karaball.png
+603;Demon - Kurohime;Demons;★★★★;NULL;Demon - Kurohime.png
+604;Demon - The Unawakened;Demons;★★★★★;NULL;Demon - The Unawakened.png
+605;Demon - Asmod;Demons;★★★★★;NULL;Demon - Asmod.png
+606;Demon - Kingu;Demons;★★★★★;160;Demon - Kingu.png
+607;Demon - Kyuubi;Demons;★★★★★;150;Demon - Kyuubi.png
+608;Demon - Baal;Demons;★★★★★;145;Demon - Baal.png
+609;Demon - Shaitan;Demons;★★★★★;171;Demon - Shaitan.png
+610;Demon - Naraka;Demons;★★★★★;167;Demon - Naraka.png
+611;Demon - Ebirah;Demons;★★★★★;167;Demon - Ebirah.png
+612;Demon - Hel;Demons;★★★★★;174;Demon - Hel.png
+613;Demon - Ika;Demons;★★★★★;181;Demon - Ika.png
+614;Demon - Rakshasa;Demons;★★★★★;156;Demon - Rakshasa.png
+615;Demon - Hades;Demons;★★★★★;174;Demon - Hades.png
+

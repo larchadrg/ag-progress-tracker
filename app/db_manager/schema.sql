@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS elements;
 DROP TABLE IF EXISTS ranks; 
 DROP TABLE IF EXISTS sigils; 
 DROP TABLE IF EXISTS warp_skills; 
+DROP TABLE IF EXISTS functors; 
 
 
 CREATE TABLE sigils (
@@ -36,4 +37,14 @@ CREATE TABLE IF NOT EXISTS elements(
     "name" TEXT NOT NULL,
     "character_id" INTEGER NOT NULL,
     FOREIGN KEY("character_id") REFERENCES "characters"("id")
+);
+
+CREATE TABLE IF NOT EXISTS functors(
+    id INTEGER PRIMARY KEY, 
+    name TEXT NOT NULL, 
+    faction TEXT, 
+    rarity TEXT NOT NULL, 
+    main_character_id INTEGER, 
+    image TEXT,
+    FOREIGN KEY (main_character_id) REFERENCES character(id)
 );

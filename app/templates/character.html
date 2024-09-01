@@ -70,6 +70,25 @@
           Reset Data
         </button>
       </div>
+
+      <!-- Functors -->
+      <div class="col">
+        <h3 class="card-title">Functor</h3>
+        <label class="form-label text-black" for="functor_selector">Name: </label>
+        <select name="functor_selector">
+          <option value="" selected="">Choose a functor...</option>
+          {%for functor in functors %}
+          <option value="{{functor.id}}">{{functor.name}}</option>
+          {%endfor%}
+        </select>
+        <div>
+          <label for="functor-level" class="form-label text-black">Level: </label>
+          <input type="number" name="functor_level" min="1" max="5" value="1"> 
+        </div>
+        
+        <img src="" alt="functor-img">
+      </div>
+
     </div>
   </article>
   <div class="row m-2">
@@ -234,6 +253,11 @@
     </div>
 
     {% endfor %}
+  </section>
+
+  <!--Fuctors  -->
+  <section class="card text-bg-primary m-3">
+    
   </section>
 </main>
 <script defer>
