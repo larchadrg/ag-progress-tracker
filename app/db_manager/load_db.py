@@ -1,11 +1,10 @@
 import sqlite3
 import csv
-import os
-from .config import ROOT_PATH
 from .csv_paths import *
 from .insert_queries import * 
 
-DB_PATH = os.path.join(ROOT_PATH, "app", "instance", "database.db")
+DB_PATH = abspath(join("instance",'database.db'))
+SCHEMA_PATH = abspath(join('db_manager', 'schema.sql'))
 
 
 def load_db_data(path, delimiter, columns, query, skip_head=True):
