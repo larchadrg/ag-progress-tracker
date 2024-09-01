@@ -2,10 +2,11 @@ import sqlite3
 import csv
 from .csv_paths import *
 from .insert_queries import * 
+from os.path import dirname, abspath, join
 
-DB_PATH = abspath(join("instance",'database.db'))
-SCHEMA_PATH = abspath(join('db_manager', 'schema.sql'))
-
+BASE_DIR = dirname(abspath(__file__))
+DB_PATH = join(BASE_DIR, "..", "instance",'database.db')
+SCHEMA_PATH = join(BASE_DIR,'schema.sql')
 
 def load_db_data(path, delimiter, columns, query, skip_head=True):
     try:
